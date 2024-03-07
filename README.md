@@ -1,5 +1,9 @@
 # COMP 3005 Assignment 3
 
+### Assignment Demonstration Video
+
+- [Demo Video](https://youtu.be/xyz)
+
 ### Student Name and Number
 
 - Name: Omar Anwar
