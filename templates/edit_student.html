@@ -1,3 +1,11 @@
+<!--
+  This is the page that allows the user to edit a student. The user can edit the
+  student's email and delete the student. The student's name and enrollment date
+  are displayed but cannot be edited. The user can click on a button to update
+  the student's email or delete the student. The user can also click on a button
+  to go back to the home page.
+-->
+
 {% extends "layout.html" %} {% block content %}
 
 <div class="container mt-5 mb-5">
@@ -7,11 +15,13 @@
     </div>
 
     <div class="card-body">
+      <!-- Just like the home page, the same flash messages div is here as well. -->
       {% with messages = get_flashed_messages(with_categories=true) %} {% if
       messages %} {% for category, message in messages %}
       <div class="alert alert-{{ category }}">{{ message }}</div>
       {% endfor %} {% endif %} {% endwith %}
 
+      <!-- The form is displayed with the student's name, email, and enrollment date. -->
       <form method="POST">
         <div class="form-group">
           <label for="name">Name</label>
@@ -44,6 +54,12 @@
           />
         </div>
 
+        <!-- 
+          This div contains the buttons to update the student's email and delete the student.
+          The user can click on a button to update the student's email or delete the student, and
+          this calls the update_student and delete_student functions in the main_view.py file.
+          The user can also click on a button to go back to the home page.
+        -->
         <div class="d-flex justify-content-between mt-5">
           <a href="{{ url_for('main_view.home') }}" class="btn btn-secondary"
             >Go Back</a

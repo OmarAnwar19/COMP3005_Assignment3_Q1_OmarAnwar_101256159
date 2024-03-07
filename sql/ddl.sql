@@ -1,3 +1,5 @@
+-- The following SQL command can be used to create the students table:
+
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,

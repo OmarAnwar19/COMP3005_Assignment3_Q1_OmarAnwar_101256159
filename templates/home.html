@@ -1,3 +1,9 @@
+<!-- 
+  This is the home page of the application. It displays a list of students and
+  allows the user to add a new student. The list of students is displayed in a
+  card with a header that says "Manage Students". 
+-->
+
 {% extends "layout.html" %} {% block content %}
 
 <div class="container mt-5 mb-5">
@@ -7,11 +13,19 @@
     </div>
 
     <div class="card-body">
+      <!-- 
+        This div displays any messages that are flashed to the screen, including
+        success and error messages from the queries to the database.
+      -->
       {% with messages = get_flashed_messages(with_categories=true) %} {% if
       messages %} {% for category, message in messages %}
       <div class="alert alert-{{ category }}">{{ message }}</div>
       {% endfor %} {% endif %} {% endwith %}
 
+      <!--
+        The list of students is displayed in a list group. Each student is displayed in a list group item with the 
+        student's name, email, and enrollment date. The user can click on a button to edit a student. 
+      -->
       <ul class="list-group">
         {% for student in students %}
         <li class="list-group-item d-flex justify-content-between">
@@ -34,6 +48,10 @@
         {% endfor %}
       </ul>
 
+      <!-- 
+        The user can also click on a button to add a new student. The add student button opens a
+        modal that allows the user to add a new student. 
+      -->
       <button
         type="button"
         class="btn btn-primary btn-block mt-4"
@@ -46,6 +64,10 @@
   </div>
 </div>
 
+<!-- 
+  The modal for adding a student is defined here. The modal has a form with fields for the student's 
+  first name, last name, email, and enrollment date. The user can click on a button to add the student.
+-->
 <div
   class="modal fade"
   id="addStudentModal"
