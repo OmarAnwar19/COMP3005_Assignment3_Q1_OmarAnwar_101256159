@@ -46,10 +46,6 @@ To create the `postgres` user through pgAdmin, follow these steps:
 - In the "Privileges" tab, set "Can login?" to "Yes" and "Superuser?" to "Yes".
 - Click "Save" to create the user.
 
-Right-click on "Databases" and select "Create" > "Database".
-Enter Assignment3 as the database name and select postgres as the owner.
-Click "Save" to create the database.
-
 ### Creating the 'Assignment3' Database
 
 To create the `Assignment3` database through pgAdmin, follow these steps:
